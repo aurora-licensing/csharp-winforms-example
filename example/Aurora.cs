@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -111,6 +111,7 @@ public class Aurora
         }
     }
 
+    public void CheckSession(string sessionId)
     {
         var parameters = new Dictionary<string, string>
         {
@@ -132,7 +133,7 @@ public class Aurora
             info = new Response { valid = true, response = jsonResponse["message"] };
         }
     }
-    
+
     public void KillSession(string sessionId)
     {
         var parameters = new Dictionary<string, string>
@@ -155,7 +156,7 @@ public class Aurora
             info = new Response { valid = true, response = jsonResponse["message"] };
         }
     }
-    
+
     public void CheckLicenseExpiry(string license)
     {
         var parameters = new Dictionary<string, string>
